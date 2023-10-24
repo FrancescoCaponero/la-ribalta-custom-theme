@@ -87,6 +87,8 @@ pre {
  */
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: initial;
 }
 
 /**
@@ -332,6 +334,11 @@ template {
   display: none;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 /* BREAKPOINTS */
 /* BREAKPOINTS USAGE */
 /* 
@@ -345,6 +352,103 @@ template {
 }
 
  */
+.main-navigation .menu-left .menu-menu-1-container ul li a {
+  font-size: 52px;
+  font-weight: 200;
+}
+.main-navigation .menu-right .menu-menu-2-container ul li a {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.custom-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-logo-link img {
+  display: block;
+  max-height: 37px;
+  width: auto;
+  height: auto;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 80px;
+  background-color: #fafafa;
+}
+.site-header .site-branding {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: 80px;
+  width: 90%;
+  margin: 0 auto;
+}
+.site-header .site-branding .svg-ham {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  height: 80px;
+  width: 79px;
+}
+.site-header .site-branding .svg-ham svg {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.site-header .site-branding .svg-ham .svg-1 {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.site-header .site-branding .svg-ham .svg-2 {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.site-header .site-branding .svg-ham .active-svg-close {
+  opacity: 0;
+}
+.site-header .site-branding .svg-ham .active-svg-open {
+  opacity: 1;
+}
+
+.spacer {
+  height: 80px;
+  width: 100%;
+}
+
+.main-navigation {
+  position: fixed;
+  z-index: 1;
+  top: -100%;
+  height: calc(100vh - 80px);
+  left: 0;
+  background-color: #fafafa;
+  width: 100%;
+  transition: all 0.24s ease-in-out;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.main-navigation .nav-content-wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.active-menu {
+  top: 80px;
+}
+
 .let {
   background-color: red;
 }

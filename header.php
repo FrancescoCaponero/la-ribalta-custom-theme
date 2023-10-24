@@ -32,31 +32,47 @@
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$ribalta_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $ribalta_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $ribalta_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
+			<div class="svg-wrapper">
+				<div class="svg-ham">
+					<svg class="svg-1" width="40" height="20" viewBox="0 0 63 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect y="24.4443" width="62.069" height="4" fill="black"/>
+						<rect width="62.069" height="4.44444" fill="black"/>
+						<rect y="12" width="62.069" height="4" fill="black"/>
+					</svg>
+					<svg class="svg-2" width="40" height="28" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect y="40.4353" width="57.0731" height="3.67804" transform="rotate(-45 0 40.4353)" fill="#494033"/>
+						<rect x="5.02734" width="57.0731" height="4.08671" transform="rotate(45 5.02734 0)" fill="#494033"/>
+					</svg>
+				</div>
+			</div>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ribalta-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<nav id="site-navigation" class="main-navigation">
+		<div class="nav-content-wrapper">
+			<div class="menu-left">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'menu-1',
+						
+					)
+				);
+				?>
+			</div>
+			<div class="menu-right">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'menu-2',
+						
+					)
+				);
+				?>
+			</div>
+		</div>
+	</nav><!-- #site-navigation -->
+<div class="spacer"></div>

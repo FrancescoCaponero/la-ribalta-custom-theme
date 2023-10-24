@@ -1,0 +1,42 @@
+.main-navigation{
+    position: fixed;
+    z-index: 1;
+    top: -100%;
+    height: calc(100vh - 80px);
+    left: 0;
+    background-color: $white-color;
+    width: 100%;
+    transition: all .24s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .nav-content-wrapper{
+        max-width: 1200px;
+        width: 90%;
+        margin: 80px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu-left{
+            .menu-menu-1-container{
+                ul{
+                    li{
+                        a{}
+                    }
+                }
+            }
+        }
+        .menu-right{
+            .menu-menu-2-container{
+                ul{
+                    li{
+                        a{}
+                    }
+                }
+            }
+        }
+    }
+}
+.active-menu{
+    top: 80px;
+}

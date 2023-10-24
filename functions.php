@@ -49,9 +49,11 @@ function ribalta_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'ribalta-theme' ),
+			'menu-1' => esc_html__( 'menu-primary', 'ribalta-theme' ),
+			'menu-2' => esc_html__( 'menu-secondary', 'ribalta-theme' ),
 		)
 	);
+	
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -114,25 +116,6 @@ function ribalta_theme_content_width() {
 }
 add_action( 'after_setup_theme', 'ribalta_theme_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ribalta_theme_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'ribalta-theme' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'ribalta-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'ribalta_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -140,8 +123,7 @@ add_action( 'widgets_init', 'ribalta_theme_widgets_init' );
 function ribalta_theme_scripts() {
 	wp_enqueue_style( 'ribalta-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
     wp_enqueue_style( 'ribalta-theme-custom-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
-	wp_enqueue_script( 'ribalta-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'ribalta-theme-nav', get_template_directory_uri() . '/js/nav.js', array('jquery'), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'ribalta_theme_scripts' );
 

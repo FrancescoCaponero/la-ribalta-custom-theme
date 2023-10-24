@@ -100,6 +100,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   
   a {
     background-color: transparent;
+    text-decoration: none;
+    color: initial;
   }
   
   /**
@@ -373,3 +375,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     display: none;
   }
   
+  ul{
+    list-style: none;
+    padding: 0;
+  }
