@@ -127,5 +127,84 @@ function ribalta_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ribalta_theme_scripts' );
 
+function custom_admin_styles() {
+    wp_enqueue_style('admin-styles', get_template_directory_uri() . '/admin-assets/admin-style.css');
+}
 
+add_action('admin_enqueue_scripts', 'custom_admin_styles');
+
+function custom_editor_color_palette() {
+    add_theme_support('editor-color-palette', array(
+        array(
+            'name'  => 'Color 1',
+            'slug'  => 'color-1',
+            'color' => '#785013',
+        ),
+        array(
+            'name'  => 'Color 2',
+            'slug'  => 'color-2',
+            'color' => '#494033',
+        ),
+        array(
+            'name'  => 'Color 3',
+            'slug'  => 'color-3',
+            'color' => '#EDE1D0',
+        ),
+        array(
+            'name'  => 'Color 4',
+            'slug'  => 'color-4',
+            'color' => '#CAB089',
+        ),
+        array(
+            'name'  => 'Color 5',
+            'slug'  => 'color-5',
+            'color' => '#E39D5D',
+        ),
+        array(
+            'name'  => 'Color 6',
+            'slug'  => 'color-6',
+            'color' => '#252525',
+        ),
+        array(
+            'name'  => 'Color 7',
+            'slug'  => 'color-7',
+            'color' => '#817F7F',
+        ),
+        array(
+            'name'  => 'Color 8',
+            'slug'  => 'color-8',
+            'color' => '#fafafa',
+        ),
+    ));
+}
+add_action('after_setup_theme', 'custom_editor_color_palette');
+
+function add_page_slug_to_body_class($classes) {
+    global $post;
+
+    if (is_singular() && $post) {
+        $classes[] = 'page-slug-' . $post->post_name;
+    }
+
+    return $classes;
+}
+add_filter('body_class', 'add_page_slug_to_body_class');
+
+function custom_post_type_spettacoli() {
+    $labels = array(
+        'name' => 'Spettacoli',
+        'singular_name' => 'Spettacolo',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'spettacoli'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    );
+
+    register_post_type('spettacoli', $args);
+}
+add_action('init', 'custom_post_type_spettacoli');
 

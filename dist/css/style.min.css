@@ -339,6 +339,16 @@ ul {
   padding: 0;
 }
 
+::-moz-selection {
+  color: rgb(147, 147, 147);
+  background-color: rgb(86, 86, 86);
+}
+
+::selection {
+  color: rgb(147, 147, 147);
+  background-color: rgb(86, 86, 86);
+}
+
 /* BREAKPOINTS */
 /* BREAKPOINTS USAGE */
 /* 
@@ -355,10 +365,45 @@ ul {
 .main-navigation .menu-left .menu-menu-1-container ul li a {
   font-size: 52px;
   font-weight: 200;
+  color: #494033;
 }
 .main-navigation .menu-right .menu-menu-2-container ul li a {
   font-size: 36px;
   font-weight: 300;
+  color: #494033;
+}
+
+.wp-block-cover__inner-container, .wp-block-cover__background {
+  z-index: -99 !important;
+}
+
+.wp-block-cover {
+  transform: translateY(-200px);
+}
+
+.wp-block-cover__inner-container {
+  max-width: 1000px;
+  width: 90%;
+}
+
+.main-navigation a {
+  position: relative;
+}
+.main-navigation a:not(:has(img)):hover::after {
+  content: "";
+  background-color: #494033;
+  width: 80%;
+  height: 1px;
+}
+.main-navigation a:not(:has(img))::after {
+  content: "";
+  transition: all 0.2s ease-in-out;
+  background-color: #494033;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 0%;
+  height: 1px;
 }
 
 .custom-logo-link {
@@ -383,7 +428,7 @@ ul {
 .site-header .site-branding {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 80px;
   width: 90%;
   margin: 0 auto;
@@ -418,6 +463,16 @@ ul {
 .site-header .site-branding .svg-ham .active-svg-open {
   opacity: 1;
 }
+.site-header::after {
+  content: "";
+  border-bottom: 1px solid #fafafa;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  z-index: -100;
+  top: 80px;
+  left: 0;
+}
 
 .spacer {
   height: 80px;
@@ -438,17 +493,333 @@ ul {
   justify-content: center;
 }
 .main-navigation .nav-content-wrapper {
-  max-width: 1200px;
+  max-width: 1000px;
   width: 90%;
   margin: 80px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.active-menu {
-  top: 80px;
+@media (max-width: 768px) {
+  .main-navigation .nav-content-wrapper {
+    justify-content: center;
+  }
+}
+.main-navigation .nav-content-wrapper .menu-left .menu-menu-1-container ul {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .main-navigation .nav-content-wrapper .menu-left .menu-menu-1-container ul li a {
+    font-size: 2.6rem;
+  }
+}
+.main-navigation .nav-content-wrapper .menu-right {
+  max-width: 400px;
+  width: 90%;
+}
+@media (max-width: 992px) {
+  .main-navigation .nav-content-wrapper .menu-right {
+    display: none;
+  }
+}
+.main-navigation .nav-content-wrapper .menu-right .menu-menu-2-container ul {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.main-navigation .nav-content-wrapper .menu-right .inner-nav--icons {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  right: 50%;
+  bottom: 10%;
+  transform: translateX(50%);
+}
+.main-navigation .nav-content-wrapper .menu-right .inner-nav--icons a::after {
+  display: none;
 }
 
-.let {
-  background-color: red;
+.active-menu {
+  top: 80px;
+  border-top: 1px solid #494033;
+}
+
+.site-footer {
+  width: 100%;
+}
+.site-footer .site-info {
+  width: 100%;
+  background-color: #252525;
+  padding: 1.3rem 0;
+}
+.site-footer .site-info .inner-site-info {
+  margin: 4rem auto 6rem auto;
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.site-footer .site-info .inner-site-info__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.site-footer .site-info .inner-site-info__left--mails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.2rem;
+}
+.site-footer .site-info .inner-site-info__left--mails .mail1, .site-footer .site-info .inner-site-info__left--mails .mail2 {
+  display: flex;
+  flex-direction: column;
+}
+.site-footer .site-info .inner-site-info__left h4 {
+  color: #E39D5D;
+  font-size: 30px;
+  font-weight: 400;
+}
+.site-footer .site-info .inner-site-info__left a {
+  color: #EDE1D0;
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+.site-footer .site-info .inner-site-info__right {
+  display: flex;
+  flex-direction: column;
+}
+.site-footer .site-info .inner-site-info__right h4 {
+  color: #E39D5D;
+  font-size: 30px;
+  font-weight: 400;
+}
+.site-footer .site-info .inner-site-info__right--icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.site-footer .color-claim-wrap {
+  width: 100%;
+  background-color: #EDE1D0;
+  padding: 1.3rem 0;
+}
+.site-footer .color-claim-wrap .copy-claim {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-footer .color-claim-wrap .copy-claim__logo {
+  width: 50px;
+}
+
+.home .site-main h2, .home .site-main p {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.home .divider {
+  overflow: hidden;
+  max-height: 500px;
+}
+.home .divider img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.page-slug-bio .wp-block-image {
+  max-height: 700px;
+  overflow: hidden;
+}
+.page-slug-bio .wp-block-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.page-slug-bio p, .page-slug-bio h2 {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+}
+.page-slug-bio h2 {
+  margin-bottom: 2rem;
+}
+.page-slug-bio .wp-block-group__inner-container {
+  padding: 6rem 0rem;
+}
+
+.page-slug-spettacoli .site-main-spettacoli {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  gap: 10rem;
+  width: 90%;
+  margin: 180px auto;
+}
+.page-slug-spettacoli .site-main-spettacoli a {
+  transition: all 0.3s ease-in-out;
+  border-left: 1px solid #252525;
+  padding-left: 1.4rem;
+}
+.page-slug-spettacoli .site-main-spettacoli a .img-wrapper {
+  width: 100%;
+  height: 18rem;
+  overflow: hidden;
+}
+.page-slug-spettacoli .site-main-spettacoli a .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 120%;
+  width: 100%;
+}
+.page-slug-spettacoli .site-main-spettacoli a p {
+  font-size: 18px;
+}
+.page-slug-spettacoli .site-main-spettacoli a h2 {
+  font-size: 2.5rem;
+}
+.page-slug-spettacoli .site-main-spettacoli a:hover {
+  opacity: 0.7;
+}
+
+.spettacoli {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 90%;
+  margin: 180px auto;
+}
+.spettacoli p {
+  font-size: 18px;
+}
+.spettacoli img {
+  margin: 5rem auto;
+}
+
+.page-slug-contatti .contact-wrapper {
+  margin: 0 !important;
+  height: calc(100vh - 160px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-slug-contatti .contact-wrapper p a {
+  color: #EDE1D0;
+  text-decoration: underline;
+}
+.page-slug-contatti .contact-wrapper .left-contact {
+  max-width: 500px;
+}
+.page-slug-contatti .contact-wrapper .right-contact {
+  align-self: flex-start;
+}
+.page-slug-contatti .contact-wrapper .inner-nav--icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 3rem;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.page-slug-contatti .color-claimcontact-wrap {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #EDE1D0;
+  padding: 1.3rem 0;
+}
+.page-slug-contatti .color-claimcontact-wrap .copy-claim {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-slug-contatti .color-claimcontact-wrap .copy-claim__logo {
+  width: 50px;
+}
+.page-slug-contatti #colophon {
+  display: none;
+}
+
+.has-color-1-background-color {
+  background-color: #785013;
+}
+
+.has-color-2-background-color {
+  background-color: #494033;
+}
+
+.has-color-3-background-color {
+  background-color: #EDE1D0;
+}
+
+.has-color-4-background-color {
+  background-color: #CAB089;
+}
+
+.has-color-5-background-color {
+  background-color: #E39D5D;
+}
+
+.has-color-6-background-color {
+  background-color: #252525;
+}
+
+.has-color-7-background-color {
+  background-color: #817F7F;
+}
+
+.has-color-8-background-color {
+  background-color: #fafafa;
+}
+
+.has-color-1-color {
+  color: #785013;
+}
+
+.has-color-2-color {
+  color: #494033;
+}
+
+.has-color-3-color {
+  color: #EDE1D0;
+}
+
+.has-color-4-color {
+  color: #CAB089;
+}
+
+.has-color-5-color {
+  color: #E39D5D;
+}
+
+.has-color-6-color {
+  color: #252525;
+}
+
+.has-color-7-color {
+  color: #817F7F;
+}
+
+.has-color-8-color {
+  color: #fafafa;
+}
+
+:where(figure) {
+  margin: 0;
 }
