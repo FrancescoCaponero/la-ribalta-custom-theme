@@ -564,6 +564,11 @@ ul {
   align-items: flex-start;
   justify-content: space-between;
 }
+@media (max-width: 992px) {
+  .site-footer .site-info .inner-site-info {
+    flex-direction: column;
+  }
+}
 .site-footer .site-info .inner-site-info__left {
   display: flex;
   flex-direction: column;
@@ -574,6 +579,11 @@ ul {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2.2rem;
+}
+@media (max-width: 768px) {
+  .site-footer .site-info .inner-site-info__left--mails {
+    flex-direction: column;
+  }
 }
 .site-footer .site-info .inner-site-info__left--mails .mail1, .site-footer .site-info .inner-site-info__left--mails .mail2 {
   display: flex;
@@ -618,10 +628,24 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 992px) {
+  .site-footer .color-claim-wrap .copy-claim {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .site-footer .color-claim-wrap .copy-claim__logo {
   width: 50px;
 }
 
+.home .main-bg {
+  height: 80vh !important;
+}
+.home .main-bg img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  height: 100% !important;
+}
 .home .site-main h2, .home .site-main p {
   width: 90%;
   max-width: 1000px;
@@ -658,7 +682,7 @@ ul {
   padding: 6rem 0rem;
 }
 
-.page-slug-spettacoli .site-main-spettacoli {
+.post-type-archive-spettacoli .site-main-spettacoli {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -667,30 +691,116 @@ ul {
   width: 90%;
   margin: 180px auto;
 }
-.page-slug-spettacoli .site-main-spettacoli a {
+.post-type-archive-spettacoli .site-main-spettacoli a {
   transition: all 0.3s ease-in-out;
   border-left: 1px solid #252525;
   padding-left: 1.4rem;
 }
-.page-slug-spettacoli .site-main-spettacoli a .img-wrapper {
+.post-type-archive-spettacoli .site-main-spettacoli a .img-wrapper {
   width: 100%;
   height: 18rem;
   overflow: hidden;
 }
-.page-slug-spettacoli .site-main-spettacoli a .img-wrapper img {
+.post-type-archive-spettacoli .site-main-spettacoli a .img-wrapper img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 120%;
   width: 100%;
 }
-.page-slug-spettacoli .site-main-spettacoli a p {
+.post-type-archive-spettacoli .site-main-spettacoli a p {
   font-size: 18px;
 }
-.page-slug-spettacoli .site-main-spettacoli a h2 {
+.post-type-archive-spettacoli .site-main-spettacoli a h2 {
   font-size: 2.5rem;
 }
-.page-slug-spettacoli .site-main-spettacoli a:hover {
+.post-type-archive-spettacoli .site-main-spettacoli a:hover {
   opacity: 0.7;
+}
+
+.post-type-archive-compagnia .site-main-compagnia {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  gap: 10rem;
+  width: 90%;
+  margin: 180px auto;
+}
+.post-type-archive-compagnia .site-main-compagnia a {
+  transition: all 0.3s ease-in-out;
+  border-left: 1px solid #252525;
+  padding-left: 1.4rem;
+}
+.post-type-archive-compagnia .site-main-compagnia a .img-wrapper {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+}
+.post-type-archive-compagnia .site-main-compagnia a .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.post-type-archive-compagnia .site-main-compagnia a p {
+  font-size: 18px;
+}
+.post-type-archive-compagnia .site-main-compagnia a h2 {
+  font-size: 2.5rem;
+}
+.post-type-archive-compagnia .site-main-compagnia a:hover {
+  opacity: 0.7;
+}
+
+.post-type-archive-collaborazioni .site-main-collaborazioni {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  gap: 10rem;
+  width: 90%;
+  margin: 180px auto;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a {
+  transition: all 0.3s ease-in-out;
+  border-left: 1px solid #252525;
+  padding-left: 1.4rem;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a .img-wrapper {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a p {
+  font-size: 18px;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a h2 {
+  font-size: 2.5rem;
+}
+.post-type-archive-collaborazioni .site-main-collaborazioni a:hover {
+  opacity: 0.7;
+}
+
+.page-slug-formazione .site-main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 90%;
+  margin: 180px auto;
+  gap: 0.5rem;
+}
+.page-slug-formazione .site-main img {
+  width: 100% !important;
+}
+.page-slug-formazione .site-main p {
+  font-size: 20px;
 }
 
 .spettacoli {
@@ -708,6 +818,41 @@ ul {
   margin: 5rem auto;
 }
 
+.compagnia {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 90%;
+  margin: 180px auto;
+}
+.compagnia p {
+  font-size: 18px;
+  width: 100%;
+}
+.compagnia p:first-child {
+  font-size: 3rem;
+  font-weight: 200;
+}
+.compagnia img {
+  margin: 5rem auto;
+}
+
+.collaborazioni {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 90%;
+  margin: 180px auto;
+}
+.collaborazioni p {
+  font-size: 18px;
+}
+.collaborazioni img {
+  margin: 5rem auto;
+}
+
 .page-slug-contatti .contact-wrapper {
   margin: 0 !important;
   height: calc(100vh - 160px);
@@ -715,6 +860,16 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .page-slug-contatti .contact-wrapper {
+    padding: 0rem 0.6rem;
+  }
+}
+@media (max-width: 992px) {
+  .page-slug-contatti .contact-wrapper .wp-block-group-is-layout-flex {
+    flex-direction: column !important;
+  }
 }
 .page-slug-contatti .contact-wrapper p a {
   color: #EDE1D0;
@@ -728,7 +883,7 @@ ul {
 }
 .page-slug-contatti .contact-wrapper .inner-nav--icons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   gap: 3rem;
   align-content: center;
@@ -748,6 +903,12 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .page-slug-contatti .color-claimcontact-wrap .copy-claim {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .page-slug-contatti .color-claimcontact-wrap .copy-claim__logo {
   width: 50px;
@@ -822,4 +983,8 @@ ul {
 
 :where(figure) {
   margin: 0;
+}
+
+figure {
+  width: auto !important;
 }

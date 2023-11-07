@@ -208,3 +208,39 @@ function custom_post_type_spettacoli() {
 }
 add_action('init', 'custom_post_type_spettacoli');
 
+function custom_post_type_compagnia() {
+    $labels = array(
+        'name' => 'Compagnia',
+        'singular_name' => 'Compagnia',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'compagnia'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    );
+
+    register_post_type('compagnia', $args);
+}
+add_action('init', 'custom_post_type_compagnia');
+
+function custom_post_type_collaborazioni() {
+    $labels = array(
+        'name' => 'Collaborazioni',
+        'singular_name' => 'Collaborazioni',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'collaborazioni'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    );
+
+    register_post_type('collaborazioni', $args);
+}
+add_action('init', 'custom_post_type_collaborazioni');
+
