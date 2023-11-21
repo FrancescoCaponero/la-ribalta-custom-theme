@@ -33,6 +33,17 @@
 			<?php
 			the_custom_logo();
 			?>
+			<div class="menu-l">
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-3',
+							'menu_id'        => 'menu-3',
+							
+						)
+					);
+				?>
+			</div>
 			<div class="svg-wrapper">
 				<div class="svg-ham">
 					<svg class="svg-1" width="40" height="20" viewBox="0 0 63 29" fill="none" xmlns="http://www.w3.org/2000/svg">

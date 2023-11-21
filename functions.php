@@ -49,8 +49,9 @@ function ribalta_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'menu-primary', 'ribalta-theme' ),
-			'menu-2' => esc_html__( 'menu-secondary', 'ribalta-theme' ),
+			'menu-1' => esc_html__( 'Primary', 'ribalta-theme' ),
+			'menu-2' => esc_html__( 'Secondary', 'ribalta-theme' ),
+			'menu-3' => esc_html__( 'Extended', 'ribalta-theme' ),
 		)
 	);
 	
